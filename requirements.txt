@@ -1,0 +1,11 @@
+pywebview>=5.1
+pandas>=2.0.0
+numpy>=1.24.0
+pyreadstat>=1.2.0
+scipy>=1.10.0
+statsmodels>=0.14.0
+plotly>=5.14.0
+openpyxl>=3.1.0
+pycryptodome>=3.20.0
+pyinstaller>=6.4.0
+python-docx>=0.8.11

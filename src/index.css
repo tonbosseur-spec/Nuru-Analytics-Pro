@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer base {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.2);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.4);
+  }
+
+  /* Dark mode filter inversion */
+  .dark {
+    filter: invert(1) hue-rotate(180deg) brightness(1.05) contrast(0.95);
+    background-color: #f8fafc;
+  }
+
+  /* Prevent inversion of the header navigation bar to keep it dark */
+  .dark header {
+    filter: invert(1) hue-rotate(180deg);
+  }
+
+  /* Do not double-invert svg icons inside the already-inverted header */
+  .dark header svg.lucide {
+    filter: none;
+  }
+
+  /* Do not invert images, charts, icons, and specific elements */
+  .dark img,
+  .dark video,
+  .dark .js-plotly-plot,
+  .dark .plotly,
+  .dark svg.lucide:not(header svg),
+  .dark .chart-wrapper canvas {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
